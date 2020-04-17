@@ -24,3 +24,4 @@ class KindOfFoodSerializer(serializers.ModelSerializer):
         fields = (
          'id', 'name', 'created_at'
         )
+        

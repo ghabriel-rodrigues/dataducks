@@ -20,3 +20,4 @@ class KindOfFoodListCreate(generics.ListCreateAPIView):
 def home(request):
     # lead = get_object_or_404(Lead)
     return render(request, 'home.html', locals())
+    

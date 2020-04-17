@@ -25,3 +25,4 @@ class Lead(models.Model):
     #geolocation = Coordinates 
     #recaptcha = Recaptcha
     created_at = models.DateTimeField(verbose_name="Data created in", auto_now_add=True)
+    
