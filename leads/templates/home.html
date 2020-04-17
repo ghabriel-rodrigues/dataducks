@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load bootstrap4 %}
 <html>
 
 <head>
@@ -10,13 +11,17 @@
   <meta name="viewport" content="width=device-width" />
 
   <link href="{% static 'assets/css/styles.css'%}" rel="stylesheet">
+  
   <title>Dataducks</title>
 </head>
 
 <body>
   <div class="container">
     <header>
-      <div class="logo">LOGO DataDucks</div>
+      <div class="logo-area">
+        <div class="logo"></div>
+        <span class="logo-text">Dataducks</span>
+      </div>
     </header>
     <section>
       SECTION
