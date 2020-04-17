@@ -1,0 +1,20 @@
+body {
+  background: linear-gradient(0deg, rgb(8, 94, 56) 20%, rgba(9,121,72,1) 30%, rgba(255,255,255,1) 100%);
+  margin:0;
+  padding:0;
+}
+.logo {
+  background: url(../img/_logo_dataducks.png) no-repeat center;
+  height:400px;
+  width: 400px;
+}
+
+header {
+  background: url(../img/ducks.jpg) no-repeat center right;
+}
+
+footer {
+  background-color: rgb(8, 94, 56);
+  height: 200px;
+  width: 100%;
+}
