@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
+    
+    'leads.apps.LeadsConfig',
 ]
 
 # avoids the browseable API access in production with this configuration
