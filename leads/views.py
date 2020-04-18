@@ -1,10 +1,10 @@
-from .serializers import LeadSerializer
-from rest_framework import generics
 from django.shortcuts import render
+from django.utils import timezone
+from rest_framework import generics
+from decouple import config
 from .forms import LeadForm
 from .models import Lead
-
-from decouple import config
+from .serializers import LeadSerializer
 
 #Generic views work well to render the Rest API easy access pages
 class LeadListCreate(generics.ListCreateAPIView):
@@ -19,9 +19,8 @@ def lead(request):
         leadForm = LeadForm(request.POST)
         if leadForm.is_valid():
             lead = leadForm.save(commit=False)
-            lead.created_at = timezone.now()
             lead.save()
-            leadForm.sendInfo(lead)
+            return render(request, 'thanks.html')
         else:
             leadForm = LeadForm()
     return render(request, 'lead.html', locals())
