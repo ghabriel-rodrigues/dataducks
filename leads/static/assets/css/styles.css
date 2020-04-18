@@ -54,7 +54,11 @@ p {
   padding: 2px 0 2px 15px;
 }
 
+.checkbox-field { margin:17px 0 8px 0; }
+
 .g-recaptcha { margin: 1rem 0; }
+
+.map { height: 230px; width: 100%; }
 
 .logo-area {
   display: flex;
@@ -69,6 +73,7 @@ p {
   width: 55px;
   margin-top: 10px;
 }
+.btn { float:right; }
 
 header {
   background-color: #FFF;

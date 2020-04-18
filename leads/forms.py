@@ -14,4 +14,4 @@ class LeadForm(ModelForm):
 
     class Meta:
         model = Lead
-        exclude = ('created_at',)
+        exclude = ('geolocation','created_at',)

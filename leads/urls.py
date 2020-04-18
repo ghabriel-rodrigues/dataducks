@@ -4,6 +4,7 @@ from . import views
 
 urlpatterns = [
     path('', views.lead, name="lead"),
+    path('lead', views.lead, name="lead"),
     path("logout/", auth_views.LogoutView.as_view(), name="logout"),    
     path('api/lead/', views.LeadListCreate.as_view() ),
 ]
