@@ -2,10 +2,18 @@ from django.db import models
 from django_google_maps import fields as map_fields
 
 class Lead(models.Model):
+    choices_measure = (
+        ('KG', 'KG'),
+        ('Gram', 'Gram'),
+        ('Unit', 'Unit'),
+    )
+
     email = models.EmailField(unique = True)   
     kindoffood = models.CharField(max_length=300, verbose_name="What kind of food the ducks are fed?")
     food = models.CharField(max_length=300, verbose_name="What food the ducks are fed?")
     how_much_food = models.PositiveIntegerField(verbose_name="How much food the ducks are fed?") #value in grams
+    measure = models.CharField(max_length=4, verbose_name="What is the usual measure of the food the ducks are fed?", choices=choices_measure, default="KG")
+    
     how_many_ducks = models.PositiveIntegerField(verbose_name="How many ducks are fed?")
     fed_time = models.DateTimeField(verbose_name="What time the ducks are fed?")
     
