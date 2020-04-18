@@ -1,6 +1,4 @@
 from django.contrib import admin
-from .models import Lead, Food, KindOfFood
+from .models import Lead
 
 admin.site.register(Lead)
-admin.site.register(Food)
-admin.site.register(KindOfFood)

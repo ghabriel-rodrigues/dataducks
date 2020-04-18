@@ -1,7 +1,65 @@
-body {
-  background: #FFF;
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  outline: 0;
+}
+
+html, body, #root {
+  min-height: 100%;
+}
+
+body {
+  background: rgb(182, 243, 182);
+  margin: 0;
+  padding: 50px 0;
+}
+
+body, input, button {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.container {
+  align-items: center;
+  background:#FFF;
+  
+  -webkit-box-shadow: 6px 7px 14px 0px #666;
+  -moz-box-shadow: 6px 7px 14px 0px #666;
+  box-shadow: 6px 7px 14px 0px #666;
+
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: 572px;
+  width: 100%;
+}
+
+h1 {
+  color: #48AA82;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 45px;
+  font-weight: bold;
+  margin:0;
+  text-shadow: #3e8e4f 1px 1px 1px;
+  padding: 15px 0 10px 15px;
+}
+
+p {
+  color: #508670;
+  font-size: 1rem;
+  line-height: 21px;
+  padding: 2px 0 2px 15px;
+}
+
+.g-recaptcha { margin: 1rem 0; }
+
+.logo-area {
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .logo {
@@ -12,25 +70,22 @@ body {
   margin-top: 10px;
 }
 
-.logo-text {
-  
-}
-
 header {
   background-color: #FFF;
-  border-bottom: 1px solid #63af63;
-  height: 67px;
+  border-bottom: 1px solid #48AA82;
+  border-radius: 5px 5px 0 0;
+  height: 77px;
   margin: 0;
   width: 100%;
 }
 
 section {
-  height: 100px;
+  padding: 25px 15px 15px 15px;
   width: 100%;
 }
 
 footer {
   background-color: rgb(8, 94, 56);
-  height: 200px;
+  border-radius: 0 0 5px 5px;
   width: 100%;
 }
