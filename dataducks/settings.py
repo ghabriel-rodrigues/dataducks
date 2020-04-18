@@ -26,6 +26,8 @@ SECRET_KEY = config('SECRET_KEY')
 RECAPTCHA_PUBLIC_KEY = config('RECAPTCHA_PUBLIC_KEY')
 RECAPTCHA_PRIVATE_KEY = config('RECAPTCHA_PRIVATE_KEY')
 
+GOOGLE_MAPS_API_KEY =config('GOOGLE_MAPS_API_KEY')
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
 
@@ -46,6 +48,7 @@ INSTALLED_APPS = [
     'captcha',
     'material.theme.cyan',
     'material',    
+    'django_google_maps',
 
     'leads.apps.LeadsConfig',
 ]

@@ -5,6 +5,7 @@
 */settings/local.py
 /staticfiles/*
 /mediafiles/*
+/static/*
 __pycache__/
 /.vscode/
 

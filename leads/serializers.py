@@ -8,6 +8,6 @@ class LeadSerializer(serializers.ModelSerializer):
         fields = (
           'id', 'email', 'kindoffood', 'food', 
           'how_much_food','how_many_ducks','fed_time',
-          'fed_everyday','created_at'
+          'fed_everyday', 'address', 'geolocation', 'created_at'
         )
         

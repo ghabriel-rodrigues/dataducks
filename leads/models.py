@@ -1,4 +1,5 @@
 from django.db import models
+from django_google_maps import fields as map_fields
 
 class Lead(models.Model):
     email = models.EmailField(unique = True)   
@@ -9,9 +10,9 @@ class Lead(models.Model):
     fed_time = models.DateTimeField(verbose_name="What time the ducks are fed?")
     
     #TODO: If 'fed_everyday' is true, everyday a new lead (copy) needs to be created 
+    #heroku scheduler
     fed_everyday = models.BooleanField(blank=True, verbose_name="Do you feed the ducks everyday?")
-    #where the ducks are fed?
-    #address = Address
-    #geolocation = Coordinates 
+    address = map_fields.AddressField(verbose_name="What is the address where the ducks are fed?", blank=True, max_length=200)
+    geolocation = map_fields.GeoLocationField(verbose_name="What are the coordinates where the ducks are fed?", blank=True, max_length=100)
     created_at = models.DateTimeField(verbose_name="Data created in", auto_now_add=True)
     
