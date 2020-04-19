@@ -1,5 +1,7 @@
 # DATADUCKS
 
+This is a system created to help scientists to figure out hw they can help ducks. It requires Python3.7, Django 2.2 and Mongo to work well.
+
 STEPS TO INSTALL THE APP in your local
 
 - Clone the repo
