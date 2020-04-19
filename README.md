@@ -1,6 +1,6 @@
 # DATADUCKS
 
-This is a system created to help scientists to figure out how they can help ducks. It requires Python3.7, Django 2.2 and Mongo to work well.
+This is a system created to help scientists to figure out hw they can help ducks. It requires Python3.7, Django 2.2 and Mongo to work well.
 
 STEPS TO INSTALL THE APP in your local
 
@@ -9,8 +9,8 @@ STEPS TO INSTALL THE APP in your local
 - Run pip3.7 install -r requirements.txt to install dependencies in venv
 - Create a db named "dataducks" in your Mongo
 - Rename .env.example to .env and check the keys in .env, adding their values
-- Run in cmd "python manage.py migrate" 
-- Run in cmd "python manage.py makemigrations"
-- Run again in cmd "python manage.py migrate"
+- Run in cmd "python manage.py migrate" to update db with some app dependencies 
+- Run in cmd "python manage.py makemigrations" to update migrations
+- Run again in cmd "python manage.py migrate" to update db with the changes
 - Create a superuser to make it easier create and check data, using the cmd "python manage.py createsuperuser" and follow the instructions
 
