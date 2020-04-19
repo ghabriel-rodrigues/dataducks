@@ -1,17 +1,19 @@
  
 from django import forms
 from django.forms import ModelForm
-from .models import Lead
-from captcha.fields import ReCaptchaField
-from django_google_maps import widgets as map_widgets
-from django_google_maps import fields as map_fields
 
+# Form dependencies
+from captcha.fields import ReCaptchaField
+from .models import Lead
+
+# Determines how the form will be rendered to the user
 class LeadForm(ModelForm):
+    # Enables Recaptcha in LeadForm view
     captcha = ReCaptchaField()
-    formfield_overrides = {
-        map_fields.AddressField: {'widget': map_widgets.GoogleMapsAddressWidget},
-    }
 
     class Meta:
         model = Lead
+
+        # Fields that will be excluded from the view
         exclude = ('geolocation','created_at',)
+        

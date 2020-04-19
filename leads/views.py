@@ -1,10 +1,12 @@
-from django.shortcuts import render
-from django.utils import timezone
+# Rest dependencies
 from rest_framework import generics
+from .serializers import LeadSerializer
+
+# View dependencies
 from decouple import config
+from django.shortcuts import render
 from .forms import LeadForm
 from .models import Lead
-from .serializers import LeadSerializer
 
 #Generic views work well to render the Rest API easy access pages
 class LeadListCreate(generics.ListCreateAPIView):
@@ -13,7 +15,9 @@ class LeadListCreate(generics.ListCreateAPIView):
 
 #View to render the Lead Form
 def lead(request):
+    # Needed to render the gmaps
     gkey = config('GOOGLE_MAPS_API_KEY')
+    # App main process
     leadForm = LeadForm()
     if request.method == "POST":
         leadForm = LeadForm(request.POST)

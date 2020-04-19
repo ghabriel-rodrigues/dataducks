@@ -1,7 +1,8 @@
+# Rest dependencies
 from rest_framework import serializers
 from .models import Lead
 
-#Serializers are mandatory to enable operating on models through the REST API
+# Enables operating on models through the REST API forms
 class LeadSerializer(serializers.ModelSerializer):
     class Meta:
         model = Lead

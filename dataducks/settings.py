@@ -49,14 +49,10 @@ INSTALLED_APPS = [
     'material.theme.cyan',
     'material',    
     'django_google_maps',
+    'django_extensions',
 
     'leads.apps.LeadsConfig',
 ]
-
-LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'lead'
-LOGOUT_URL = 'logout'
-LOGOUT_REDIRECT_URL = 'login'
 
 # avoids the browseable API access in production with this configuration
 if not DEBUG:
