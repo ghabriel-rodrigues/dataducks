@@ -49,7 +49,6 @@ INSTALLED_APPS = [
     'material.theme.cyan',
     'material',    
     'django_google_maps',
-    'django_extensions',
 
     'leads.apps.LeadsConfig',
 ]

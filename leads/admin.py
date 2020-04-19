@@ -1,7 +1,7 @@
 
 #Chart/PDF dependencies
 import json
-import time 
+import time
 from django.core.serializers.json import DjangoJSONEncoder
 from django.http import JsonResponse, HttpResponse
 from django.core.files.storage import FileSystemStorage
