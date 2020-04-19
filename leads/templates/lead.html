@@ -1,6 +1,7 @@
 {% load staticfiles %}
 {% load material_form %}
 <html>
+
 <head>
   <meta charset="utf-8" />
   <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/img/favicon-16x16.png'%}">
@@ -37,6 +38,15 @@
       <form action="/lead/" method="post">
         {% csrf_token %}
         {% form form=leadForm %}
+        {% part form.fed_everyday %}
+        <div class="row">
+          <div class="checkbox-field col s12" id="id_fed_everyday_container">
+            <label>
+              <input class="filled-in " id="id_fed_everyday" name="fed_everyday" type="checkbox"><span
+                for="id_fed_everyday">Do you feed the ducks everyday?</span></label>
+          </div>
+        </div>
+        {% endpart %}
         {% part form.address %}
         <div class="row">
           <div class="input-field col s12" id="id_address_container">
@@ -47,7 +57,7 @@
         <div id="map" class="map"></div>
         {% endpart %}
         {% endform %}
-        
+
         <button name="_submit" class="btn">Submit</button>
       </form>
 
@@ -61,4 +71,5 @@
   <script src="https://maps.googleapis.com/maps/api/js?key={{gkey}}&libraries=places&callback=initAutocomplete" async
     defer></script>
 </body>
+
 </html>

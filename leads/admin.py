@@ -2,31 +2,47 @@ from django.contrib import admin
 from .models import Lead
 from django_google_maps import widgets as map_widgets
 from django_google_maps import fields as map_fields
+from weasyprint import HTML
 
 import json
+import time 
 
 from django.core.serializers.json import DjangoJSONEncoder
-from django.db.models import Count
-from django.db.models.functions import Trunc
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
+from django.core.files.storage import FileSystemStorage
+from django.template.loader import render_to_string
 from django.urls import path
 
 
 @admin.register(Lead)
 class LeadAdmin(admin.ModelAdmin):
-    actions = ['make_published']
+    actions = ['generate_pdf']
 
-    def make_published(modeladmin, request, queryset):
-        pass
-        # queryset.update(status='p')
-    make_published.short_description = "Mark selected stories as published"
+    def generate_pdf(modeladmin, request, queryset):
+        file_name = "report-{0}.pdf".format(time.strftime("%d-%m-%Y-%H-%M-%S"))
+        html_string = render_to_string('reports/pdf.html', {'queryset': queryset})
+
+        html = HTML(string=html_string)
+        html.write_pdf(target='/tmp/{}.pdf'.format(queryset));
+
+        fs = FileSystemStorage('/tmp')
+        with fs.open('{}.pdf'.format(queryset)) as pdf:
+            response = HttpResponse(pdf, content_type='application/pdf')
+            response['Content-Disposition'] = 'attachment; filename="{}.pdf"'.format(queryset)
+            response['Content-Disposition'] = 'attachment; filename="{0}"'.format(file_name)
+            return response
+
+        return response
+
+    generate_pdf.label = "Generate PDF"
+    generate_pdf.short_description = "Generate items selected as PDF"
 
     formfield_overrides = {
         map_fields.AddressField: {'widget': map_widgets.GoogleMapsAddressWidget},
     }
     list_display = ['food', 'kindoffood', 
           'how_much_food','measure', 'how_many_ducks', 'fed_time',
-          'fed_everyday', 'address', 'created_at']
+          'fed_everyday', 'address']
     list_filter = ('food', 'kindoffood', 
           'how_much_food','measure', 'how_many_ducks', 'fed_time',
           'fed_everyday', 'address', 'created_at')
@@ -40,7 +56,6 @@ class LeadAdmin(admin.ModelAdmin):
      # Inject chart data on page load in the ChangeList view
     def changelist_view(self, request, extra_context=None):
         chart_data = self.chart_data()
-        
         as_json = json.dumps(list(chart_data), cls=DjangoJSONEncoder)
 
         extra_context = extra_context or {"chart_data": as_json}

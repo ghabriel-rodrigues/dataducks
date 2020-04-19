@@ -1,0 +1,83 @@
+<html>
+<head>  
+  <style>
+    body {
+      box-sizing: border-box;
+      font-size: 12px;
+    }
+
+    .logo-area {
+      display: flex;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    h1 {
+      color: #48AA82;
+      font-family: "Roboto", Arial, Helvetica, sans-serif;
+      font-size: 45px;
+      font-weight: bold;
+      margin: 0;
+      text-shadow: #3e8e4f 1px 1px 1px;
+      padding: 15px 0 10px 0;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    th {
+      background: #cac9c9;
+    }
+
+    th,
+    td {
+      border: 1px solid #cac9c9;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background: #efefef;
+    }
+
+    tr:hover {
+      background: #d1d1d1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="logo-area">
+    <h1>DataDucks</h1>
+  </div>
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Food</th>
+      <th>Kind of food</th>
+      <th>How much food</th>
+      <th>Measure</th>
+      <th>How many ducks</th>
+      <th>Feed time</th>
+      <th>Feed everyday</th>
+      <th>Address</th>
+      <th>Created at</th>
+    </tr>
+    {% for i in queryset %}
+    <tr>
+      <td>{{i.id}}</td>
+      <td>{{i.food}}</td>
+      <td>{{i.kindoffood}}</td>
+      <td>{{i.how_much_food}}</td>
+      <td>{{i.measure}}</td>
+      <td>{{i.how_many_ducks}}</td>
+      <td>{{i.fed_time}}</td>
+      <td>{{i.fed_everyday}}</td>
+      <td>{{i.address}}</td>
+      <td>{{i.created_at}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+
+</html>
