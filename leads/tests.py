@@ -86,7 +86,6 @@ class ProjectTests(TestCase):
       self.assertEqual(lead.how_many_ducks, 200)
       self.assertEqual(lead.fed_everyday, True)
       self.assertEqual(lead.address, "Fortaleza, Ceará, Brasil")
-      self.assertEqual(lead.geolocation, "12, 12")
         
     def test_string_representation(self):
         lead = Lead(food="Food", kindoffood="Kind")
