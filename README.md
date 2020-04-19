@@ -12,5 +12,5 @@ STEPS TO INSTALL THE APP in your local
 - Run in cmd "python manage.py migrate" to update db with some app dependencies 
 - Run in cmd "python manage.py makemigrations" to update migrations
 - Run again in cmd "python manage.py migrate" to update db with the changes
-- Create a superuser to make it easier create and check data, using the cmd "python manage.py createsuperuser" and follow the instructions
+- Create a superuser to make it easier to create and check data, using the cmd "python manage.py createsuperuser" and follow the instructions
 

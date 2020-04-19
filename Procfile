@@ -1,0 +1,1 @@
+web: gunicorn dataducks.wsgi --log-file -
