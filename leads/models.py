@@ -8,10 +8,14 @@ class Lead(models.Model):
         ('Unit', 'Unit'),
     )
 
+    def __str__(self):
+        return "Food: %s - Kind of food: %s" % (self.food, self.kindoffood)
+
+
     email = models.EmailField(unique = True)   
     kindoffood = models.CharField(max_length=300, verbose_name="What kind of food the ducks are fed?")
     food = models.CharField(max_length=300, verbose_name="What food the ducks are fed?")
-    how_much_food = models.PositiveIntegerField(verbose_name="How much food the ducks are fed?") #value in grams
+    how_much_food = models.PositiveIntegerField(help_text="KG, grams or units",verbose_name="How much food the ducks are fed?") #value in grams
     measure = models.CharField(max_length=4, verbose_name="What is the usual measure of the food the ducks are fed?", choices=choices_measure, default="KG")
     
     how_many_ducks = models.PositiveIntegerField(verbose_name="How many ducks are fed?")
@@ -20,7 +24,7 @@ class Lead(models.Model):
     #TODO: If 'fed_everyday' is true, everyday a new lead (copy) needs to be created 
     #heroku scheduler
     fed_everyday = models.BooleanField(blank=True, verbose_name="Do you feed the ducks everyday?")
-    address = map_fields.AddressField(verbose_name="What is the address where the ducks are fed?", blank=True, max_length=200)
+    address = map_fields.AddressField(verbose_name="What is the address where the ducks are fed?", max_length=200)
     geolocation = map_fields.GeoLocationField(verbose_name="What are the coordinates where the ducks are fed?", blank=True, max_length=100)
     created_at = models.DateTimeField(verbose_name="Data created in", auto_now_add=True)
     

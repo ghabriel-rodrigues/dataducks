@@ -21,7 +21,6 @@ def lead(request):
             lead = leadForm.save(commit=False)
             lead.save()
             return render(request, 'thanks.html')
-        else:
-            leadForm = LeadForm()
+        
     return render(request, 'lead.html', locals())
     
