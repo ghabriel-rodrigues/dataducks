@@ -9,8 +9,8 @@ It is hosted in HEROKU and can be checked here:
 * [Dataducks Admin](https://demo-dataducks.herokuapp.com/admin)
 
 It was:
-* Started on 16/04/2020
-* Finished on 19/04/2020
+* Started on 17/04/2020
+* Finished on 20/04/2020
 
 ## Stack 💻
 * Python
