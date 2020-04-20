@@ -28,6 +28,9 @@ It is hosted in HEROKU and can be checked here: [Dataducks](https://demo-dataduc
   
 * Admin 
   * Uses the information, generating reports. The module has access to all other modules, being able to CRUD all the data.
+  
+* RESTFUL 
+  * Offers a REST API to all models registered being easy to extend the functionalities. 
 
 ## How to install? 🔧
 STEPS TO INSTALL THE APP in your local
