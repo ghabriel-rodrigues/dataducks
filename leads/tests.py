@@ -3,11 +3,19 @@ import datetime
 import pytz
 
 # Test dependencies
+from django.core.management import call_command
 from django.test import TestCase
+from io import StringIO
 
 # Model dependencies
 from .models import Lead
 from .forms import LeadTestForm
+
+class SchedulerFedEverydayTest(TestCase):
+    def test_command_output(self):
+        out = StringIO()
+        call_command('scheduler_feedeveryday', stdout=out)
+        self.assertContains('Successfully', out.getvalue())
 
 # Class to test data, run "python manage.py test leads" in cmd line to see it running 
 class ProjectTests(TestCase):  
@@ -59,6 +67,18 @@ class ProjectTests(TestCase):
       self.assertEqual(lead.how_many_ducks, 200)
       self.assertEqual(lead.fed_everyday, True)
       self.assertEqual(lead.address, "Fortaleza, Ceará, Brasil")
+
+    def test_blank_data(self):
+      form = LeadTestForm({})
+      self.assertFalse(form.is_valid())
+      self.assertEqual(form.errors, {
+          'email': ['required'],
+          'food': ['required'],
+          'kindoffood': ['required'],
+          'how_much_food': ['required'],
+          'measure': ['required'],
+          'how_many_ducks': ['required'],
+      })
         
     def test_string_representation(self):
         lead = Lead(food="Food", kindoffood="Kind")
