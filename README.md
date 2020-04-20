@@ -2,7 +2,7 @@ Dataducks
 ===
 
 ## The project 🧙
-That is a project that was created to help scientists to figure out how they can help ducks. There is a form that consists of bunch of questions needed to find parameters, where a user will be able to inform his/her routine feeding ducks and an administrative area where scientists can log, check information regitered using different filters, getting reports about these searches.
+That is a project that was created to help scientists to figure out how they can help ducks. There is a form that consists of a bunch of questions needed to find parameters, where a user will be able to inform his/her routine feeding ducks and an administrative area where scientists can log, check information registered using different filters, getting/generating reports about these searches.
 
 It is hosted in HEROKU and can be checked here: [Dataducks](https://demo-dataducks.herokuapp.com/)
 
@@ -50,18 +50,18 @@ In a first moment a lot of techs could be used, but the decision was based with 
 
 All of that using a tool where I could reach great performance, talking about time and delivery. I also thought about the possibility of data being used by a scientist, becoming important to choose some technologies with support to that kind of extension, which influenced my decision. 
 
-So, I decided to use Django/Python, Mongo (I changed that to Postgresql because of Heroku, but better since the support toextend the app to DataScience just become better using POSTGREE and Python). 
+So, I decided to use Django/Python and Mongo. I changed that to Postgresql because of Heroku's deployment, but that options looks great since the support to extend the app to DataScience apps just become better using Postgresql and Python. 
 
 ## What I'd do differently 🔮💣️
 1. I would create a better layout, using more images, background and probably some animation.
 
-2. I would love to use React, Angular or Vue, increasing more reactivity concepts and in a first moment I checked this, installing webpack and things like that but after a while I realized it was unnecessary, since I would use just a single page to the form. Deadline requires taking some shortcuts.
+2. I would love to use React, Angular or Vue, increasing more reactivity concepts. In a first moment I checked this, installing webpack and things like that but after a while I realized it was unnecessary, since I would use just a single page to the form. Anyways short deadlines requires taking some shortcuts.
 
 3. Having more time I probably would think in how to increment the functionalities. 
 
-4. I wouldn't use Mongo in a Heroku project, since I faced unexpected problems to config that there, wasting a time where other things could be done.
+4. I wouldn't use Mongo in a Heroku project since I faced unexpected problems to config that there, wasting a time where other things could be done.
 
-5. I would dev thinking more about the tests, but Django do a lot of work alone, which is a thing, good and bad at the same time.
+5. I would dev thinking more about the tests, but Django does a lot of work alone, which is a good and bad thing, at the same time.
 
 6. I would like to adapt and use an amazing boilerplate that I've found, created by great souls. It uses a lot of good things like CI, Docker, Celery, Sentry, React, completely architecture separation, all already configurated, which sounds really nice. Open [https://github.com/vintasoftware/django-react-boilerplate](https://github.com/vintasoftware/django-react-boilerplate) to check!
 
