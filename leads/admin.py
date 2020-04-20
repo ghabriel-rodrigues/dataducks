@@ -1,18 +1,15 @@
 
-#Chart/PDF dependencies
-import json
+# PDF dependencies
 import time
-from django.core.serializers.json import DjangoJSONEncoder
-from django.http import JsonResponse, HttpResponse
+from django.http import HttpResponse
 from django.core.files.storage import FileSystemStorage
 from django.template.loader import render_to_string
-from django.urls import path
 from weasyprint import HTML
 
-#Default import 
+# Default import 
 from django.contrib import admin
 
-#Model dependencies
+# Model dependencies
 from django_google_maps import fields as map_fields
 from django_google_maps import widgets as map_widgets
 from .models import Lead
@@ -60,34 +57,5 @@ class LeadAdmin(admin.ModelAdmin):
           'fed_everyday', 'address', 'created_at']
 
     ordering = ("-created_at",) 
-
-
-     # Inject chart data on page load in the ChangeList view
-    def changelist_view(self, request, extra_context=None):
-        chart_data = self.chart_data()
-        as_json = json.dumps(list(chart_data), cls=DjangoJSONEncoder)
-
-        extra_context = extra_context or {"chart_data": as_json}
-        return super().changelist_view(request, extra_context=extra_context)
-
-    # Setting url to be used by chart in admin
-    def get_urls(self):
-        urls = super().get_urls()
-        extra_urls = [
-            path("chart_data/", self.admin_site.admin_view(self.chart_data_endpoint))
-        ]
-        return extra_urls + urls
-
-    # JSON endpoint for generating chart data that is used for dynamic loading via JS.
-    def chart_data_endpoint(self, request):
-        chart_data = self.chart_data()
-        return JsonResponse(list(chart_data), safe=False)
-
-    # Returning queryset to be rendered by chart in admin
-    def chart_data(self):
-        return (
-            Lead.objects.values("how_many_ducks","fed_time")
-            .order_by("-created_at")
-        )
 
 

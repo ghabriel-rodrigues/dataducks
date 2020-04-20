@@ -1,0 +1,36 @@
+{% load staticfiles %}
+{% load material_form %}
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/img/favicon-16x16.png'%}">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+  <meta name="viewport" content="width=device-width" />
+
+  {% include 'material/includes/material_css.html' %}
+  <link href="{% static 'assets/css/styles.css'%}" rel="stylesheet">
+
+  <title>DataDucks - Thanks!</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="logo-area">
+        <div class="logo"></div>
+        <h1>DataDucks</h1>
+      </div>
+    </header>
+    <section>
+      <p>
+        We could not find your page request, <br/> please click in the button to go to the form.
+        <a href="/"class="btn">New form</a>
+      </p>
+    </section>
+    <footer>
+
+    </footer>
+  </div>
+</body>
+</html>

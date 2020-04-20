@@ -30,34 +30,7 @@ class ProjectTests(TestCase):
         for i in labels:
           self.assertContains(response, i)
 
-#    # Model tests
-#     def test_fields(self):
-#         lead = Lead(
-#           email="email", 
-#           food="food", 
-#           kindoffood="kindoffood",
-#           how_much_food="how_much_food",
-#           measure="measure",
-#           how_many_ducks="how_many_ducks",
-#           fed_time="fed_time",
-#           fed_everyday="fed_everyday",
-#           address="address",
-#           geolocation="geolocation",
-#           created_at="created_at",
-#         )
-
-#         self.assertEqual(lead.email, "email")
-#         self.assertEqual(lead.food, "food")
-#         self.assertEqual(lead.kindoffood, "kindoffood")
-#         self.assertEqual(lead.how_much_food, "how_much_food")
-#         self.assertEqual(lead.measure, "measure")
-#         self.assertEqual(lead.how_many_ducks, "how_many_ducks")
-#         self.assertEqual(lead.fed_time, "fed_time")
-#         self.assertEqual(lead.fed_everyday, "fed_everyday")
-#         self.assertEqual(lead.address, "address")
-#         self.assertEqual(lead.geolocation, "geolocation")
-#         self.assertEqual(lead.created_at, "created_at")
-
+    #Model tests
     def test_validform_data(self):      
       form = LeadTestForm(
         {
