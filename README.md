@@ -4,7 +4,9 @@ Dataducks
 ## The project 🧙
 That is a project that was created to help scientists to figure out how they can help ducks. There is a form that consists of a bunch of questions needed to find parameters, where a user will be able to inform his/her routine feeding ducks and an administrative area where scientists can log, check information registered using different filters, getting/generating reports about these searches.
 
-It is hosted in HEROKU and can be checked here: [Dataducks](https://demo-dataducks.herokuapp.com/)
+It is hosted in HEROKU and can be checked here: 
+[Dataducks](https://demo-dataducks.herokuapp.com/)
+[Dataducks Admin](https://demo-dataducks.herokuapp.com/admin)
 
 * Started on 16/04/2020
 * Finished on 19/04/2020
