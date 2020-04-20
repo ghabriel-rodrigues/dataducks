@@ -12,9 +12,11 @@ coverage==5.0.4
 cssselect2==0.3.0
 dataclasses==0.6
 defusedxml==0.6.0
+dj-database-url==0.5.0
 Django==2.2.12
 django-appconf==1.0.4
 django-google-maps==0.12.1
+django-heroku==0.3.1
 django-material==1.6.3
 django-recaptcha==2.0.6
 djangorestframework==3.11.0
@@ -24,7 +26,9 @@ html5lib==1.0.1
 httplib2==0.17.2
 idna==2.9
 mock==4.0.2
+oauthlib==3.1.0
 Pillow==7.1.1
+psycopg2==2.8.5
 pycodestyle==2.5.0
 pycparser==2.20
 PyJWT==1.7.1

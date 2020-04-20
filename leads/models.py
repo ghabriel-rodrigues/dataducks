@@ -13,8 +13,8 @@ class Lead(models.Model):
         return "Food: %s - Kind of food: %s" % (self.food, self.kindoffood)
 
     email = models.EmailField(unique = True)    
-    kindoffood = models.CharField("Kind", max_length=300, help_text="What kind of food the ducks are fed?")
-    food = models.CharField("Food", max_length=300, help_text="What food the ducks are fed?")
+    kindoffood = models.CharField("Kind", max_length=200, help_text="What kind of food the ducks are fed?")
+    food = models.CharField("Food", max_length=200, help_text="What food the ducks are fed?")
     how_much_food = models.PositiveIntegerField("How much food?", help_text="KG, grams or units") #value in grams
     measure = models.CharField("Measure", max_length=4, help_text="What is the usual measure of the food the ducks are fed?", choices=choices_measure, default="KG")
     

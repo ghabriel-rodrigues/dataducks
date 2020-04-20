@@ -92,12 +92,25 @@ TEMPLATES = [
 WSGI_APPLICATION = 'dataducks.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'DB_NAME',
+            'USER': 'DB_USER',
+            'PASSWORD': 'DB_PASS',
+            'HOST': 'localhost',
+            'PORT': '',
+        }
+    }
 
-DATABASES = {
-     "default": {"ENGINE": "djongo", "NAME": config('DB_NAME'),}
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        }
+    }
+
 
 
 # Password validation

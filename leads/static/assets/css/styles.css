@@ -73,7 +73,7 @@ p {
   width: 55px;
   margin-top: 10px;
 }
-.btn { float:right; }
+.btn { float:right; margin-top:15px; }
 
 header {
   background-color: #FFF;
