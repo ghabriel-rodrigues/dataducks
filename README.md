@@ -8,6 +8,7 @@ It is hosted in HEROKU and can be checked here:
 * [Dataducks](https://demo-dataducks.herokuapp.com/)
 * [Dataducks Admin](https://demo-dataducks.herokuapp.com/admin)
 
+It was:
 * Started on 16/04/2020
 * Finished on 19/04/2020
 
