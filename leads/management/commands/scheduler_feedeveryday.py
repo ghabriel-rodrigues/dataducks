@@ -10,18 +10,17 @@ from leads.models import Lead
 class Command(BaseCommand):
     help = 'Add a new (copy of) Lead if the opt fed_everyday is True, every day'
 
-    def add_arguments(self, parser):
-      parser.add_argument('lead_ids', nargs='+', type=int)
-
     def handle(self, *args, **options):
-      for lead_id in options['lead_ids']:
-        try:
-          lead = Lead.objects.get(pk=lead_id)
-        except Lead.DoesNotExist:
-          raise CommandError('Lead "%s" does not exist' % lead_id)
+      
+      try:
+        leadList = Lead.objects.all()
+      except leadList.DoesNotExist:
+        raise CommandError('leadList does not exist')
 
+      for lead in leadList:
         if lead.fed_everyday:
-          lead_copy = Lead(            
+          lead_copy = Lead( 
+            #not so good solution needed to copy and register a unique field           
             email="id_%s_of_%s_%s" % (lead.id, uuid.uuid4(), lead.email) ,
             food= lead.food, 
             kindoffood=  lead.kindoffood,
@@ -29,10 +28,11 @@ class Command(BaseCommand):
             measure= lead.measure,
             how_many_ducks= lead.how_many_ducks,
             fed_time= lead.fed_time,
-            fed_everyday= lead.fed_everyday,
+             #avoids false data progression
+            fed_everyday= False,
             address= lead.address,
             geolocation= lead.geolocation,
             created_at= time.strftime("%d-%m-%Y-%H-%M-%S")
           )
           lead_copy.save()
-          self.stdout.write(self.style.SUCCESS('Successfully copied Lead "%s"' % lead_id))
+          self.stdout.write(self.style.SUCCESS('Successfully copied Lead "%s"' % lead.id))
