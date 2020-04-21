@@ -53,7 +53,7 @@ In a first moment a lot of techs could be used, but my decision was based in usi
 
 All of that using a tool where I could reach great performance, talking about time and delivery. I also thought about the possibility of data being used by a scientist, becoming important to choose some technologies with support to that kind of extension, which influenced my decision. 
 
-So, I decided to use Django/Python and Mongo. I changed Mongo to Postgresql because of Heroku's deployment. To do that option was good since Postgree has support to extend the app to DataScience apps. 
+So, I decided to use Django/Python and Mongo. I changed Mongo to Postgresql because of Heroku's deployment. To do that option was good since Postgresql has support to extend the app to DataScience apps. 
 
 ## What I'd do differently 🔮💣️
 1. I would create a better layout, using more images, background and probably some animation.
