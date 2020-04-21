@@ -19,7 +19,7 @@ class Lead(models.Model):
     measure = models.CharField("Measure", max_length=4, help_text="What is the usual measure of the food the ducks are fed?", choices=choices_measure, default="KG")
     
     how_many_ducks = models.PositiveIntegerField("Number of ducks", help_text="How many ducks are fed?")
-    fed_time = models.DateTimeField("Time", help_text="What time the ducks are fed?")
+    fed_time = models.TimeField("Time", help_text="What time the ducks are fed?")
     
     fed_everyday = models.BooleanField("Feed everyday?", blank=True, help_text="Do you feed the ducks everyday?")
     address = map_fields.AddressField(help_text="What is the address where the ducks are fed?", blank=True, max_length=200)

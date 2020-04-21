@@ -23,6 +23,9 @@ __pycache__/
 node_modules/
 npm-debug.log
 
+# Migrations
+*/migrations/*
+
 # Webpack
 /frontend/bundles/*
 /frontend/webpack_bundles/*

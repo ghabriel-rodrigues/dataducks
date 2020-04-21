@@ -51,7 +51,7 @@ def lead(request):
             else:
                 recaptchaError = 'Invalid reCAPTCHA'
         else:
-            recaptchaError = 'Invalid reCAPTCHA'
+            recaptchaError = 'Some form field(s) is missing, please check the data'
 
         
     return render(request, 'lead.html', locals())
