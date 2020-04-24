@@ -18,7 +18,7 @@ It was:
 * Google Recaptcha to avoid bots
 * Google Maps to get address in a friendly way
 * Material Design
-* Django Rest Framework to support possible extensions to other cools things like React or Angular. 
+* Django Rest Framework to support possible extensions for other cool things like React or Angular. 
 
 ## Browser Support (tested on) 🌎
 * Chrome latest
@@ -27,7 +27,7 @@ It was:
 
 ## Features ⭐️
 * Home
-  * Fill the form which validates the data using Google Maps, Google Address and Google Recaptcha.
+  * Fill the form which validates the data. It uses Google Maps, Google Address and Google Recaptcha.
   
 * Admin 
   * Uses the information, generating reports. The module has access to all other modules, being able to CRUD all the data.
@@ -47,9 +47,9 @@ STEPS TO INSTALL THE APP in your local
 - Create a superuser to make it easier to create and check data, using the cmd "python manage.py createsuperuser" and follow the instructions
 
 ## Approach ⚙️
-The project started with the mission of create some technical support in the given challenge to build a web app that was able to generate a form and some reports about that data.
+The project started with the mission of create some technical support to build a web app that was able to generate a form and some reports about the data.
 
-In a first moment a lot of techs could be used, but my decision was based in using the tools that I could use taking less time as possible to develop. I wondered a little bit about how to attend the points giving a good relevance to important points like security, good access to data using REST and authentication. 
+In a first moment a lot of techs could be used, but my decision was based in using tools that I could take less time as possible to develop. I wondered a little bit about how to attend the points giving a good relevance to important points like security, good access to data using REST and authentication. 
 
 All of that using a tool where I could reach great performance, talking about time and delivery. I also thought about the possibility of data being used by a scientist, becoming important to choose some technologies with support to that kind of extension, which influenced my decision. 
 
@@ -64,12 +64,12 @@ So, I decided to use Django/Python and Mongo. I changed Mongo to Postgresql beca
 
 4. I wouldn't use Mongo in a Heroku project since I faced unexpected problems to config that there, wasting a time where other things could be done.
 
-5. I would dev thinking more about the tests, but Django does a lot of work alone, which is a good and bad thing, at the same time.
+5. I would develop thinking more about tests, but Django does a lot of work alone, which is a good and bad thing, at the same time.
 
 6. I would like to adapt and use an amazing boilerplate that I've found, created by great souls. It uses a lot of good things like CI, Docker, Celery, Sentry, React, all already configurated, which sounds really nice. Open [https://github.com/vintasoftware/django-react-boilerplate](https://github.com/vintasoftware/django-react-boilerplate) to check.
 
 ## Final notes 📔
-I am really happy with the results! This was a graceful experience!
+I am really happy with the results. This was a graceful experience.
 
 ___
 
