@@ -1,6 +1,7 @@
 
 # PDF dependencies
 import time
+import uuid
 from django.http import HttpResponse
 from django.core.files.storage import FileSystemStorage
 from django.template.loader import render_to_string
@@ -20,16 +21,17 @@ class LeadAdmin(admin.ModelAdmin):
 
     #Function to transform querysets (data from search list) in PDF
     def generate_pdf(modeladmin, request, queryset):
+        file_guid = uuid.uuid4()
         file_name = "report-{0}.pdf".format(time.strftime("%d-%m-%Y-%H-%M-%S"))
         html_string = render_to_string('reports/pdf.html', {'queryset': queryset})
 
         html = HTML(string=html_string)
-        html.write_pdf(target='/tmp/{}.pdf'.format(queryset));
+        html.write_pdf(target='/tmp/{}.pdf'.format(file_guid));
 
         fs = FileSystemStorage('/tmp')
-        with fs.open('{}.pdf'.format(queryset)) as pdf:
+        with fs.open('{}.pdf'.format(file_guid)) as pdf:
             response = HttpResponse(pdf, content_type='application/pdf')
-            response['Content-Disposition'] = 'attachment; filename="{}.pdf"'.format(queryset)
+            response['Content-Disposition'] = 'attachment; filename="{}.pdf"'.format(file_guid)
             response['Content-Disposition'] = 'attachment; filename="{0}"'.format(file_name)
             return response
 
